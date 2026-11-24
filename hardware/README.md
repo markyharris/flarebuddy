@@ -55,6 +55,56 @@ references; STEP imports as a real solid).
 | Push buttons ×2 | Box Parts - Buttonx2.stl | (in Box Parts.step) |
 | Wall insert | Box Parts - Wall.stl | (in Box Parts.step) |
 
+## Build
+
+### Parts
+
+The electronics that go in the box. (The printed parts are the files
+in the table above.)
+
+1. **Controller — LilyGo TTGO T-Display, 16 MB.** The brain: classic
+   ESP32 with a 1.14″ colour display and two front buttons. It *must*
+   be the classic-ESP32 board — its Bluetooth Classic A2DP is what
+   streams the spoken callouts, and the 16 MB flash is needed for the
+   firmware's partition scheme. The T-Display-S3 looks similar and
+   will not work (BLE only). Choose the 16 MB option.
+   [LilyGo T-Display](https://lilygo.cc/products/t-display?bg_ref=7LJo9u5wwo&variant=42159376433333)
+
+2. **Battery — 3.7 V, 2000 mAh LiPo, JST 1.25 plug.** A single-cell
+   pouch pack with a protection board, sized to stack behind the
+   T-Display. The board's battery socket is **JST-GH 1.25 mm** — not
+   the common JST-PH 2.0 — so buy the pack with the 1.25 plug already
+   fitted. **Meter the polarity before the first plug-in**: these
+   plugs are wired both ways by different makers, and reversed
+   polarity kills the board.
+   [Example pack with the 1.25 plug](https://www.amazon.com/dp/B0F37YXH7W)
+
+3. **Power switch — mini rocker switch, SPST, snap-in panel mount.**
+   Sits in the battery's positive lead on top of the box; it
+   disconnects the battery from everything, charger included, so
+   charging happens over USB with the switch ON. Any mini snap-in
+   rocker of this class works.
+   [Ultra Mini Rocker Switch — SPST](https://core-electronics.com.au/ultra-mini-rocker-switch-spst.html)
+
+4. **Sensor — Benewake TFmini Plus LiDAR.** The eyes: 0.1–12 m range,
+   ±5 cm to 6 m, IP65, UART output, 12 g. It mounts at the end of the
+   box with its windows flush in the sensor face.
+   [Benewake TFmini Plus at GetFPV](https://www.getfpv.com/benewake-tfmini-plus-ip65-lidar.html)
+
+5. **Voltage regulator — 5 V boost (step-up) board.** The sensor
+   needs a steady 5 V (its window is 4.5–5.5 V) whatever the battery
+   is doing, and the board's own 5V pin only back-feeds raw battery
+   voltage (~3.5 V) when USB is absent — so the sensor gets its own
+   regulated rail. The reference build uses a generic 3-pin boost
+   board (pins marked Vo / GRD / V1; measured 5.26 V out). The Pololu
+   U1V11F5 is a known-good equivalent: battery to VIN, VOUT to the
+   sensor, GND common.
+   [Pololu U1V11F5 at RobotShop](https://www.robotshop.com/products/pololu-5v-step-up-voltage-regulator-u1v11f5)
+
+### Assembly
+
+_(Mark's assembly steps go here.)_
+
 ## Print notes (reference build)
 
 - Material: **ABS** (cockpit heat rules out PLA).
