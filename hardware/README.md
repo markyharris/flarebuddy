@@ -79,12 +79,14 @@ in the table above.)
    polarity kills the board.
    [Example pack with the 1.25 plug](https://www.amazon.com/dp/B0F37YXH7W)
 
-3. **Power switch — mini rocker switch, SPST, snap-in panel mount.**
-   Sits in the battery's positive lead on top of the box; it
-   disconnects the battery from everything, charger included, so
-   charging happens over USB with the switch ON. Any mini snap-in
-   rocker of this class works.
-   [Ultra Mini Rocker Switch — SPST](https://core-electronics.com.au/ultra-mini-rocker-switch-spst.html)
+3. **Power switch — mini rocker switch, SPST, snap-in panel mount,
+   19.2 × 13 mm cutout class (KCD1).** Sits in the battery's positive
+   lead on top of the box; it disconnects the battery from
+   everything, charger included, so charging happens over USB with
+   the switch ON. The opening in the printed box measures
+   20.0 × 12.8 mm, which is this standard mini-rocker cutout — do
+   not substitute the slim 19 × 6.5 mm rockers, they fall through.
+   [TE Connectivity PRASA1-16F-BB000 at Newark](https://www.newark.com/alcoswitch-te-connectivity/prasa1-16f-bb000/switch-rocker-spst-16a-250v-black/dp/89C8962?CMP=AFC-ECIA)
 
 4. **Sensor — Benewake TFmini Plus LiDAR.** The eyes: 0.1–12 m range,
    ±5 cm to 6 m, IP65, UART output, 12 g. It mounts at the end of the
