@@ -3,12 +3,13 @@
 Printable and editable files for the FlareBuddy enclosure, designed by
 Mark Harris in Onshape and printed in ABS.
 
-![Front of the FlareBuddy box — the TFmini Plus sensor face, power switch on top](box_front.jpg)
+<img src="box_front.jpg" width="49%" alt="Front of the FlareBuddy box — the TFmini Plus sensor face, power switch on top"> <img src="box_screen.jpg" width="49%" alt="The FlareBuddy display side, showing a live height reading">
 
-*The front of the box is the business end: the TFmini Plus looks out of
-the black sensor face (the protective film comes off before flight),
-and the power slide switch sits on top. The GoPro-pattern fork is at
-the back.*
+*Left: the front of the box is the business end — the TFmini Plus looks
+out of the black sensor face (the protective film comes off before
+flight), the power slide switch sits on top, and the GoPro-pattern
+fork is at the back. Right: the display side, with a live height
+reading on the T-Display screen.*
 
 ## Renders
 
