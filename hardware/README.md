@@ -2,7 +2,18 @@
 
 Printable and editable files for the FlareBuddy enclosure live here.
 
-**Conventions**
+![Front of the FlareBuddy box — the TFmini Plus sensor face, power switch on top](box_front.jpg)
+
+*The front of the box is the business end: the TFmini Plus looks out of
+the black sensor face (the protective film comes off before flight),
+and the power slide switch sits on top. The GoPro-pattern fork is at
+the back.*
+
+## Renders
+
+_3D renders of each part will appear here as the STL files land._
+
+## File conventions
 
 - Each part goes in as a pair: an **STL** (print-ready) and a **STEP**
   (editable solid — mesh formats import into CAD tools like Onshape
@@ -13,13 +24,13 @@ Printable and editable files for the FlareBuddy enclosure live here.
 - One line per part below: what it is, material, and any print notes
   that matter.
 
-**Parts** (to be filled in as files land)
+## Parts (to be filled in as files land)
 
 - _Box tub_ —
 - _Box lid_ —
 - _Mount / fork pieces_ —
 
-**Print notes (reference build)**
+## Print notes (reference build)
 
 - Material: **ABS** (cockpit heat rules out PLA).
 - The box integrates a GoPro-pattern fork; the hinge bolt is **M5**
