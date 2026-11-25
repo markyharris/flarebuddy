@@ -212,3 +212,7 @@ only.**
   a clear cover, may sit in front of the LiDAR windows in flight.
   **Do** use the printed protective cover whenever the unit is off
   the airplane.
+- **The case is not waterproof.** The lid seam, button and switch
+  openings, and the USB port all admit water, whatever the sensor's
+  own IP65 rating says. Keep the unit dry; if it does get rained on,
+  open it up and let it dry out before powering it on.
