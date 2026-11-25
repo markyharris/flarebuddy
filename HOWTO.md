@@ -213,6 +213,9 @@ bench and backup sensor. Fly the LiDAR.
 5. First flight: calm day, a runway you know, and treat the callouts
    as a second opinion while you learn how its numbers feel against
    your own picture.
+6. After the flight, snap the **lens cover** back on before the unit
+   goes in the bag (section 7) — the windows stay clean and
+   scratch-free between flights.
 
 ## 7. Sensor care
 
@@ -221,6 +224,13 @@ bench and backup sensor. Fly the LiDAR.
   microfiber, water-damp at most. Keep them dust-free — a dirty
   window is the top cause of bad readings.
 - No covers, caps, or clear guards in front of the lens in flight.
+- **Use the printed lens cover whenever the unit is off the
+  airplane.** The enclosure set includes a slip-on cover
+  (`hardware/Lens Cover.stl`) that keeps dust, fingerprints, and
+  hangar rash off the acrylic windows while the unit is stored or
+  riding in a flight bag. Snap it on when you put FlareBuddy away —
+  and treat taking it off as part of the pre-flight: a covered lens
+  means no callouts, so *remove before flight*, every time.
 
 ## 8. Troubleshooting
 
