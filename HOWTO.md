@@ -24,6 +24,12 @@ Everything shares one small harness. The TFmini's factory cable is
 30 cm and is **not cut** in the reference build — the slack coils
 inside the box.
 
+![FlareBuddy wiring schematic](schematic.png)
+
+*The whole harness on one page: battery → switch → board, with the
+boost regulator feeding the sensor its own steady 5 V. The text below
+is the same wiring, spelled out.*
+
 **Power**
 
 ```
