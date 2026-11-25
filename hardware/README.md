@@ -111,14 +111,67 @@ strut mount runs about $99 new.
 
 ### Assembly
 
-_(Mark's assembly steps go here.)_
+Print the parts using the STL files provided (STEM files provided if editing is desired). You will need the box, lid, GoPro fork, 2 buttons, and wall (narrow, long piece).
+
+Wire up the electronics, and verify operation on the bench (see HOWTO.md for specifics). Tip: use a JST connector between the power 
+switch the micro-controller to make installing the power switch from the outside possible.
+
+First install the LIDAR Sensor in the end so the the sensor seats fully in the pocket. Take care to watch the routing of the sensor's 
+harness. There is a pocket to accept the harness with out putting undue stress on it. So the sensor can only be installed in one 
+orientation.
+
+Next, install the micro-controller in its pocket with the display facing outward through the cutout window. The end with the Wifi
+antenna fits into a pocket towards the sensor end. Use a little foam rubber around the end of the controller to take up excess 
+space. This will keep that end from moving/vibrating in the pocket.
+
+Install the two push buttons into the holes before putting the controller all the way down. The large end of the pushbutton sits on 
+the inside of the case and should be very close to the buttons, but not putting pressure on the buttons. This is important.
+
+At this point, grab the wall (thin strap piece) and slide it into the slots at the front of the case opening. This will capture the 
+micro controller into its slot so it can't move when the push buttons are pressed.
+
+Place the battery in the opposite pocket from the micro controller, and use hot glue (or similar) to hold it in position. 
+
+Roll the rest of the wiring, along with the voltage regulator board into the center of the case between the micro controller and 
+battery. Be sure there are no exposed wire that could possibly short out against the micro controller. Be sure the mating connector 
+for the switch is accessible at this point.
+
+Install the power switch from the outside of the case, then connect the switch to the harness just discussed.
+
+Test the unit by plugging it back into the USB plug and give the display a moment to light up. It should show 'USB POWER' at the 
+bottom. Then disconnect the USB, then turn the switch on (this will run on battery power) and the display will display 'Bat: XX%'.
+
+_**Important Note:** While the USB will power up the  micro controller without the power switch being in the ON position, to charge  
+the battery, the power switch must be in ON position and connected to the USB. If switch is in off position and connected to the USB, 
+the Battery will not charge._
+
+At this point, the software should already be setup, but in case this hasn't been done press and hold both push buttons and the menu 
+will be displayed. The Bluetooth setting will scan for available targets and display what it has found. Select the one desired, after 
+a moment it will return to the main screen with the message 'Searching'. Once the desired BT device has been found it will show 
+Connected. It will then take a few seconds before audio will be established, but will be denoted by the audio icon being displayed.
+
+Test the audio in the device selected and use a target to test the audio with different distances. The left and right push buttons 
+act as volume up and down, the 'VOL: 100' displays the current volume level on the display.
+
+Decide how best to mount the unit on the plane. Its suggested that a camera mount be used for flexibility of aiming. A strut style 
+camera mount located at the lowest point on the plane works best. Once the location has been settled, aim the sensor down at an angle 
+approximating straight down in relation the normal AOA (Angle of Attack) on short approach. In a tailwheel for instance, with the 
+plane settled on the ground on all 3 tires, aim the sensor straight down. This will be very close to the proper angle. Once 
+completed, measure the distance from the floor to the lense of the sensor. Put this value in the menu (press and hold both buttons 2 
+seconds) under the Offset menu item. Choose the value closest to your measurement. This will provide an accurate height of the tires 
+above ground for the audible call outs.
+
+Finally, test fly to verify proper operation. The last call out before feeling the tires hit the ground should be 'One'. If you don't hear 'One' before hitting the ground, adjust the Offset setting in the menu appropriately. 
+
+Keep in mind that this is for information only and is only experimental. 
 
 ## Print notes (reference build)
 
-- Material: **ABS** (cockpit heat rules out PLA).
+- Material: **ABS** is best choice due to strength and temperature rating. PETG is the next choice. PLA can be used for testing
+  purposes, but has low temperature ratings and could easily sag/melt in the hot sun.
 - The GoPro hinge bolt is **M5** (an M5 × 25 mm bolt with an acorn or
-  nyloc nut works); lid screws are **M3 × 10** into self-threaded
+  nyloc nut works); lid screws are **M3 × 6** into 
   bosses (model the pilot at Ø2.6 mm for printed ABS; M3 clearance is
   Ø3.2–3.4 mm).
-- The sensor face sits flush at the end of the box — nothing, not even
-  a clear cover, may sit in front of the LiDAR windows in flight.
+- The sensor face sits at the end of the box — nothing, not even
+  a clear cover, may sit in front of the LiDAR windows in flight. But use the protective cover when not in flight.
