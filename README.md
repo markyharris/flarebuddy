@@ -13,6 +13,10 @@ completely self-contained — its own battery, its own sensor, Bluetooth
 audio — and needs nothing from the aircraft. Strap it on, fly, take it
 off.
 
+**Hear it:** [the Full Range ladder, 40 ft down to 1](flarebuddy_callouts_40_to_1.mp3)
+— a 26-second MP3 assembled from the actual firmware voice clips,
+with a deliberate pause between the 5-foot steps.
+
 > **Advisory aid only.** FlareBuddy is an experimental, uncertified
 > homebuilt project. It is not a substitute for pilot judgment, a
 > calibrated instrument, or your own eyes. Fly the airplane.
