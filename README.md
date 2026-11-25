@@ -87,7 +87,8 @@ from the airliner radio altimeter, and commercial GA versions exist:
 All of them are *installed* equipment — wired into aircraft power and
 the intercom — and their lasers reach 200 ft. FlareBuddy is the
 opposite trade: nothing installed, nothing wired, its own battery and
-Bluetooth audio, roughly $100 in parts, at the cost of a ~40 ft sensor
+Bluetooth audio, **about $85 in electronic parts — under $100 all-in**
+with the printed case and hardware — at the cost of a ~40 ft sensor
 ceiling. If your airplane is certified and you want callouts from
 200 ft, buy one of theirs. If you want to strap something on for the
 weekend, build one of these.

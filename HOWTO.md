@@ -18,6 +18,18 @@ isn't (an uncertified advisory aid — fly the airplane).
 | Bluetooth audio target | Galaxy Buds Pro (proven) or any A2DP earbuds/headset; or a direct-plug Bluetooth receiver (e.g. Scosche BTAXS3) in the audio panel's aux input. |
 | Optional: [AJ-SR04M ultrasonic](https://probots.co.in/aj-sr04m-waterproof-ultrasonic-distance-sensor-module.html) + its blue driver board | Bench/backup sensor. The firmware's SENSOR menu supports it on the same pins. Its ladder tops out around 19 ft, so it's a fallback, not the flight sensor. (A commodity part — the same kit is on Amazon, eBay and AliExpress for roughly $10–15.) |
 
+**What it costs** (November 2026 prices, before shipping and tax):
+the electronics total **≈ $85** — TTGO T-Display ~$9, TFmini Plus
+~$52, battery ~$12, boost regulator ~$9, switch ~$2.50. Add a few
+dollars of filament and the M5/M3 hardware and the finished unit
+lands **under $100**; the strut mount is separate (about $99 new).
+
+The enclosure has its own guide — part files (STL + STEP), print
+notes, and step-by-step assembly instructions:
+**[hardware/README.md](hardware/README.md)**. Start there for
+anything about the case; this HOWTO covers wiring, firmware, setup,
+and installation.
+
 ## 2. Wiring
 
 Everything shares one small harness. The TFmini's factory cable is
