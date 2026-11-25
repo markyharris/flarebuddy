@@ -169,14 +169,14 @@ hold both push buttons for 2 seconds and the menu will be displayed.
 The Bluetooth setting scans for available targets and displays what
 it finds. Select the one you want; after a moment the unit returns to
 the main screen showing 'Searching'. Once the desired BT device has
-been found it will show Connected. Audio takes a few more seconds to
+been found it will show 'Connected'. Audio takes a few more seconds to
 be established, and is shown by the speaker icon appearing on the
 display — wait for the icon, not just the Connected message.
 
 Test the audio on the selected device, using a target to check the
 callouts at different distances. The left and right push buttons act
 as volume down and up, and the display shows the current level as
-'VOL: 100'.
+'VOL: XX'.
 
 Decide how best to mount the unit on the plane. It's suggested that a
 camera mount be used, for flexibility of aiming; a strut-style camera
