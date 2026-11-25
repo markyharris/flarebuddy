@@ -9,11 +9,11 @@ isn't (an uncertified advisory aid — fly the airplane).
 | Part | Notes |
 |---|---|
 | LilyGo TTGO T-Display, **16 MB**, classic ESP32 | The brain. Must be the **classic ESP32** version — Bluetooth Classic A2DP carries the audio. The T-Display-**S3** is a different board (BLE only) and **will not work**. USB chip may be CH340K or CH9102 depending on production run; both work, they just need different Windows drivers. |
-| Benewake TFmini Plus LiDAR | 0.1–12 m, IP65, UART. The sensor the box is designed around. |
+| Benewake TFmini Plus LiDAR | 0.1–12 m, IP65, UART. The sensor the case is designed around. |
 | LiPo battery, 3.7 V, 2000 mAh, **JST-GH 1.25** plug | The T-Display battery socket is JST-GH 1.25 mm — *not* the common JST-PH 2.0. **Check polarity with a meter before the first plug-in**: these plugs are wired both ways by different makers, and reversed polarity kills the board. |
 | 5 V boost regulator board | Generic 3-pin style (pins marked **Vo / GRD / V1**) or a Pololu U1V11F5. Feeds the sensor a steady 5 V from the battery. |
 | Slide switch, SPST | In the battery + lead. |
-| 3D-printed box | ABS for cockpit heat. The reference build integrates a GoPro-pattern fork into the box. Board 51.4 × 25.2 mm; display glass 29.5 × 17.6 mm, offset 7.6 mm from the board's bottom (LILYGO) end. |
+| 3D-printed case | ABS for cockpit heat. The reference build integrates a GoPro-pattern fork into the case. Board 51.4 × 25.2 mm; display glass 29.5 × 17.6 mm, offset 7.6 mm from the board's bottom (LILYGO) end. |
 | Strut mount | FlightFlix / Rock Steady pattern cushioned strap mount with a ball or GoPro hinge for tilt. Plus a safety lanyard — always. |
 | Bluetooth audio target | Galaxy Buds Pro (proven) or any A2DP earbuds/headset; or a direct-plug Bluetooth receiver (e.g. Scosche BTAXS3) in the audio panel's aux input. |
 | Optional: [AJ-SR04M ultrasonic](https://probots.co.in/aj-sr04m-waterproof-ultrasonic-distance-sensor-module.html) + its blue driver board | Bench/backup sensor. The firmware's SENSOR menu supports it on the same pins. Its ladder tops out around 19 ft, so it's a fallback, not the flight sensor. (A commodity part — the same kit is on Amazon, eBay and AliExpress for roughly $10–15.) |
@@ -34,7 +34,7 @@ and installation.
 
 Everything shares one small harness. The TFmini's factory cable is
 30 cm and is **not cut** in the reference build — the slack coils
-inside the box.
+inside the case.
 
 ![FlareBuddy wiring schematic](schematic.png)
 
@@ -146,7 +146,7 @@ UPRIGHT / FLIPPED.)*
   wired up.) Both sensors land on the same two pins, GPIO 25/26,
   which is what makes a software swap possible — but they are very
   different instruments, compared honestly below.
-- **DISPLAY** — UPRIGHT or FLIPPED, for boxes that mount the board
+- **DISPLAY** — UPRIGHT or FLIPPED, for cases that mount the board
   USB-end down. The flip applies the moment you choose it (and at
   every boot after), and the buttons swap sides to match, so VOL−
   stays on your left.
@@ -210,7 +210,7 @@ bench and backup sensor. Fly the LiDAR.
    the windows makes the sensor misread. (Leaving the film on during
    the build is good practice — the windows are acrylic and scratch
    easily.)
-2. Mount the box so the sensor points **straight down in flight
+2. Mount the case so the sensor points **straight down in flight
    attitude** — either level the airplane (tail up) while you set the
    tilt, or offset by the parked deck angle and mark the mount with
    index lines so a reinstall lands in the same place. A few degrees

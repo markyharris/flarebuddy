@@ -52,7 +52,7 @@ audio) reads a **Benewake TFmini Plus** LiDAR over UART and streams the
 callouts with the ESP32-A2DP library. A boost regulator gives the sensor
 a clean 5 V from the 3.7 V LiPo flight battery regardless of charge
 state. The whole unit — board, battery, sensor — lives in one small
-3D-printed box on a GoPro-pattern fork, strapped to the strut with a
+3D-printed case on a GoPro-pattern fork, strapped to the strut with a
 cushioned strut mount. Full parts list, wiring, firmware setup, and
 install notes are in **[HOWTO.md](HOWTO.md)**.
 

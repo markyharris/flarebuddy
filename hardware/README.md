@@ -1,11 +1,11 @@
-# FlareBuddy hardware — box and mount files
+# FlareBuddy hardware — case and mount files
 
 Printable and editable files for the FlareBuddy enclosure, designed by
 Mark Harris in Onshape and printed in ABS.
 
-<img src="box_front.jpg" width="49%" alt="Front of the FlareBuddy box — the TFmini Plus sensor face, power switch on top"> <img src="box_screen.jpg" width="49%" alt="The FlareBuddy display side, showing a live height reading">
+<img src="box_front.jpg" width="49%" alt="Front of the FlareBuddy case — the TFmini Plus sensor face, power switch on top"> <img src="box_screen.jpg" width="49%" alt="The FlareBuddy display side, showing a live height reading">
 
-*Left: the front of the box is the business end — the TFmini Plus looks
+*Left: the front of the case is the business end — the TFmini Plus looks
 out of the black sensor face (the protective film comes off before
 flight), the power slide switch sits on top, and the GoPro-pattern
 fork is at the back. Right: the display side, with a live height
@@ -15,8 +15,8 @@ reading on the T-Display screen.*
 
 Two views of each printed part, rendered from the STLs in this folder.
 
-**Box (tub)** — 45.0 × 82.0 × 44.0 mm
-![Box renders](render_box.png)
+**Case (tub)** — 45.0 × 82.0 × 44.0 mm
+![Case renders](render_box.png)
 
 **Lid** — 45.0 × 40.0 × 2.0 mm
 ![Lid renders](render_lid.png)
@@ -30,8 +30,8 @@ before flight** — the sensor cannot see through anything, including a
 clear cover.
 ![Lens cover renders](render_lens_cover.png)
 
-**Box parts (buttons + wall, as one plate)** — 23.6 × 41.0 × 4.5 mm
-![Box parts renders](render_box_parts.png)
+**Case parts (buttons + wall, as one plate)** — 23.6 × 41.0 × 4.5 mm
+![Case parts renders](render_box_parts.png)
 
 **Push buttons** — 4.8 × 4.8 × 4.5 mm each, print two
 ![Push button renders](render_buttons.png)
@@ -47,11 +47,11 @@ references; STEP imports as a real solid).
 
 | Part | STL | STEP |
 |---|---|---|
-| Box (tub) | Box.stl | Box.step |
+| Case (tub) | Box.stl | Box.step |
 | Lid | Lid.stl | Lid.step |
 | GoPro fork | Gopro Fork.stl | Gopro_fork.step |
 | Lens cover | Lens Cover.stl | Lens Cover.step |
-| Box parts plate | Box Parts.stl | Box Parts.step |
+| Case parts plate | Box Parts.stl | Box Parts.step |
 | Push buttons ×2 | Box Parts - Buttonx2.stl | (in Box Parts.step) |
 | Wall insert | Box Parts - Wall.stl | (in Box Parts.step) |
 
@@ -59,7 +59,7 @@ references; STEP imports as a real solid).
 
 ### Parts
 
-The electronics that go in the box. (The printed parts are the files
+The electronics that go in the case. (The printed parts are the files
 in the table above.)
 
 1. **Controller — LilyGo TTGO T-Display, 16 MB — ~$9.** The brain: classic
@@ -81,16 +81,16 @@ in the table above.)
 
 3. **Power switch — mini rocker switch, SPST, snap-in panel mount,
    19.2 × 13 mm cutout class (KCD1) — ~$2.50.** Sits in the battery's positive
-   lead on top of the box; it disconnects the battery from
+   lead on top of the case; it disconnects the battery from
    everything, charger included, so charging happens over USB with
-   the switch ON. The opening in the printed box measures
+   the switch ON. The opening in the printed case measures
    20.0 × 12.8 mm, which is this standard mini-rocker cutout — do
    not substitute the slim 19 × 6.5 mm rockers, they fall through.
    [TE Connectivity PRASA1-16F-BB000 at Newark](https://www.newark.com/alcoswitch-te-connectivity/prasa1-16f-bb000/switch-rocker-spst-16a-250v-black/dp/89C8962?CMP=AFC-ECIA)
 
 4. **Sensor — Benewake TFmini Plus LiDAR — ~$52.** The eyes: 0.1–12 m range,
    ±5 cm to 6 m, IP65, UART output, 12 g. It mounts at the end of the
-   box with its windows flush in the sensor face.
+   case with its windows flush in the sensor face.
    [Benewake TFmini Plus at GetFPV](https://www.getfpv.com/benewake-tfmini-plus-ip65-lidar.html)
 
 5. **Voltage regulator — 5 V boost (step-up) board — ~$9.** The sensor
@@ -112,7 +112,7 @@ strut mount runs about $99 new.
 ### Assembly
 
 Print the parts from the STL files provided (STEP files are provided
-if you want to edit the design). You will need the box, the lid, the
+if you want to edit the design). You will need the case, the lid, the
 GoPro fork, two buttons, and the wall (the narrow, long piece).
 
 Wire up the electronics and verify operation on the bench first (see
@@ -120,7 +120,7 @@ HOWTO.md for specifics). **Tip:** put a JST connector in the harness
 between the power switch and the micro-controller — it makes
 installing the power switch from outside the case possible.
 
-First, install the LiDAR sensor in the end of the box so it seats
+First, install the LiDAR sensor in the end of the case so it seats
 fully in its pocket. Mind the routing of the sensor's harness: there
 is a pocket that accepts the harness without putting undue stress on
 it, so the sensor can only be installed in one orientation.
@@ -208,7 +208,7 @@ only.**
   nyloc nut works); lid screws are **M3 × 6** into self-threaded
   bosses (model the pilot at Ø2.6 mm for printed ABS; M3 clearance is
   Ø3.2–3.4 mm).
-- The sensor face sits at the end of the box — nothing, not even
+- The sensor face sits at the end of the case — nothing, not even
   a clear cover, may sit in front of the LiDAR windows in flight.
   **Do** use the printed protective cover whenever the unit is off
   the airplane.
