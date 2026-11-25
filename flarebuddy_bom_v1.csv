@@ -1,0 +1,12 @@
+Item,Description / spec,Qty per unit,Unit cost USD (Nov 2026),Source / notes
+Controller board,"LilyGo TTGO T-Display, 16 MB flash, classic ESP32 (NOT the S3 version), CH340K or CH9102 USB",1,9.00,LilyGo direct; S3 variant is BLE-only and cannot stream audio
+Distance sensor,"Benewake TFmini Plus LiDAR, UART version, IP65, 0.1-12 m, includes 30 cm harness",1,45.00,Benewake direct / Alibaba at small qty; US retail ~$52 (RobotShop, Mouser)
+Battery,"LiPo 3.7 V 2000 mAh with JST-GH 1.25 plug",1,12.00,"Amazon example ASIN B0F37YXH7W; WARNING: JST-GH polarity is not standardised - verify against the board socket before connecting"
+Boost regulator,"5 V boost module (generic Vo/GRD/V1 board as flown, measured 5.26 V out; known-good equivalent: Pololu U1V11F5)",1,9.00,Feeds the sensor ONLY - never the board's 5 V pin
+Power switch,"Mini rocker switch, KCD1 class, 19.2 x 13 mm panel cutout (e.g. TE Connectivity PRASA1-16F-BB000)",1,2.50,"Case switch opening measures 20.0 x 12.8 mm; slim rockers (19 x 6.5 mm class) do NOT fit"
+Case set,"3D printed ABS, 7 printed parts: case tub, lid, GoPro fork, case-parts plate, button plungers x2, wall insert, lens cover",1 set,5.00,Mark's design - STL + STEP files in hardware/ folder; filament cost only, print time ~3+ hrs for the tub
+Lid screws,"M3 x 6, self-threading into printed bosses",4,0.10,Confirmed spec Nov 24 2026
+Hinge bolt,"M5 x 25 mm bolt + M5 acorn or nyloc nut (GoPro fork hinge)",1,0.50,
+Wire and sundries,"Hookup wire / Dupont leads, foam tape, heat shrink",1 lot,2.00,
+,,,, 
+TOTAL electronics + hardware per unit,,,85.00 approx,Excludes strut mount (accessory, ~$99 new / $89-95 used) and assembly labour
