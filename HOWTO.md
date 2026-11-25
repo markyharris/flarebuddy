@@ -16,7 +16,7 @@ isn't (an uncertified advisory aid — fly the airplane).
 | 3D-printed box | ABS for cockpit heat. The reference build integrates a GoPro-pattern fork into the box. Board 51.4 × 25.2 mm; display glass 29.5 × 17.6 mm, offset 7.6 mm from the board's bottom (LILYGO) end. |
 | Strut mount | FlightFlix / Rock Steady pattern cushioned strap mount with a ball or GoPro hinge for tilt. Plus a safety lanyard — always. |
 | Bluetooth audio target | Galaxy Buds Pro (proven) or any A2DP earbuds/headset; or a direct-plug Bluetooth receiver (e.g. Scosche BTAXS3) in the audio panel's aux input. |
-| Optional: AJ-SR04M ultrasonic + its blue driver board | Bench/backup sensor. The firmware's SENSOR menu supports it on the same pins. Its ladder tops out around 19 ft, so it's a fallback, not the flight sensor. |
+| Optional: [AJ-SR04M ultrasonic](https://probots.co.in/aj-sr04m-waterproof-ultrasonic-distance-sensor-module.html) + its blue driver board | Bench/backup sensor. The firmware's SENSOR menu supports it on the same pins. Its ladder tops out around 19 ft, so it's a fallback, not the flight sensor. (A commodity part — the same kit is on Amazon, eBay and AliExpress for roughly $10–15.) |
 
 ## 2. Wiring
 
@@ -116,7 +116,9 @@ power cycles and firmware updates.
   report wheel height = sensor reading − offset. Use **0.0 for bench
   testing**; set the real value at install (section 6).
 - **SENSOR** — TFMINI for flight. (ULTRASONIC only if the AJ-SR04M is
-  wired up.)
+  wired up.) Both sensors land on the same two pins, GPIO 25/26,
+  which is what makes a software swap possible — but they are very
+  different instruments, compared honestly below.
 - **DISPLAY** — UPRIGHT or FLIPPED, for boxes that mount the board
   USB-end down. The buttons swap sides to match, so VOL− stays on
   your left.
@@ -126,6 +128,29 @@ power cycles and firmware updates.
 
 Volume: in normal operation the front buttons step the callout volume
 (40/60/80/100/127) with a confirmation beep; the level is saved.
+
+### The two sensors, honestly compared
+
+| | AJ-SR04M ultrasonic | TFmini Plus LiDAR |
+|---|---|---|
+| Measures with | 40 kHz sound pulses | Infrared light (time of flight) |
+| Range | 15.5 ft against a wall on the bench — but only ~10.5 ft over black asphalt and ~9 ft over damp ground | Rated 0.1–12 m (39.4 ft); read solidly to 37 ft on the bench, the limit of the test space |
+| Beam | A wide cone (tens of degrees) — it hears the ground, the gear legs, anything in the cone | A narrow spot, about 3.5° — it measures the patch of ground it's actually pointed at |
+| Accuracy/stability | Wanders with air temperature (the speed of sound moves) and surface; soft ground absorbs the echo | ±5 cm to 6 m, and every reading carries a signal-strength value the firmware can reject on |
+| Interface | Trigger/echo pulses; the echo line is 5 V, so GPIO 26 needs a 1 kΩ / 2 kΩ divider | UART straight into GPIO 25/26 at 3.3 V — no divider, no driver board |
+| Construction | Waterproof probe on a 2.5 m cable, plus a separate driver board that is *not* waterproof | One sealed IP65 unit, 12 g |
+| Price | ~$10–15 | ~$52 |
+
+**Why the LiDAR is the flight sensor.** Range, mostly: the
+ultrasonic gives up over real ground at about 10 ft — exactly where
+flare callouts matter most — while the LiDAR covers the whole
+descent, which is what makes the Full Range ladder possible at all.
+Its narrow spot also means fewer phantom readings off gear legs and
+struts, and its numbers are steadier, so the callouts track the
+descent crisply instead of lagging behind the median filter. The
+ultrasonic earned its place — it was the prototype's first sensor,
+it's nearly free, and the probe itself is waterproof — but it is a
+bench and backup sensor. Fly the LiDAR.
 
 ## 5. Bench test
 
