@@ -106,25 +106,44 @@ Hold **both front buttons for 2 s** to open SETTINGS. In every menu,
 **VOL− steps to the next item, VOL+ chooses it**. Settings survive
 power cycles and firmware updates.
 
-- **BT DEVICE** — pair your audio target. Put earbuds in pairing mode
-  first (Galaxy Buds Pro: buds in the case, close it, reopen it — the
-  touchpad-hold method alone didn't work). Pick the device from the
-  list; after the first successful connect the board remembers it and
-  reconnects on its own at power-up.
+![The FlareBuddy settings screens](menu_screens.png)
+
+*The SETTINGS menu and three of its screens, rendered from the
+firmware — the layout and wording are the device's own. The status
+block at the bottom of the menu always shows the current settings at
+a glance. (The DISPLAY screen follows the SENSOR screen's pattern:
+UPRIGHT / FLIPPED.)*
+
+- **BT DEVICE** — pair your audio target. Choosing it scans for
+  nearby Bluetooth audio devices and lists what it finds; VOL− steps
+  the list, VOL+ picks. Put earbuds in pairing mode first (Galaxy
+  Buds Pro: buds in the case, close it, reopen it — the touchpad-hold
+  method alone didn't work). The chosen device's name is saved, and
+  after the first successful connect the board remembers it and
+  reconnects on its own at power-up. Only one device is remembered —
+  picking a new one replaces it.
 - **WHEEL OFFSET** — the sensor's height above the ground with the
-  airplane parked on its gear, 0.0–4.0 ft in 0.5 ft steps. Callouts
-  report wheel height = sensor reading − offset. Use **0.0 for bench
-  testing**; set the real value at install (section 6).
+  airplane parked on its gear. The picker shows the value big: VOL−
+  steps 0.0–4.0 ft in 0.5 ft steps, VOL+ sets it. The offset is
+  subtracted from every sensor reading, so callouts report *wheel*
+  height, not sensor height. Use **0.0 for bench testing**; set the
+  real value at install (section 6). If a mount puts the sensor more
+  than 4.0 ft above the ground, the firmware can't fully compensate —
+  mount lower, or the range needs a firmware change.
 - **SENSOR** — TFMINI for flight. (ULTRASONIC only if the AJ-SR04M is
   wired up.) Both sensors land on the same two pins, GPIO 25/26,
   which is what makes a software swap possible — but they are very
   different instruments, compared honestly below.
 - **DISPLAY** — UPRIGHT or FLIPPED, for boxes that mount the board
-  USB-end down. The buttons swap sides to match, so VOL− stays on
-  your left.
+  USB-end down. The flip applies the moment you choose it (and at
+  every boot after), and the buttons swap sides to match, so VOL−
+  stays on your left.
 - **LADDER** — 20 FT (the original: every foot from 20) or FULL
-  (40/35/30/25, then every foot from 20). Default is 20 FT.
-- **DONE** — back to normal operation; Bluetooth starts and connects.
+  (arms at 50 ft; 40/35/30/25, then every foot from 20). Default is
+  20 FT. On the ultrasonic, FULL changes nothing above ~19 ft — the
+  sensor simply can't see that far.
+- **DONE** — back to normal operation; the height screen returns and
+  Bluetooth starts and connects to the saved device.
 
 Volume: in normal operation the front buttons step the callout volume
 (40/60/80/100/127) with a confirmation beep; the level is saved.
