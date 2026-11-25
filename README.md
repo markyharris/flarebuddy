@@ -72,6 +72,26 @@ Known honest limits:
 - The battery percentage is a voltage-based gauge: honest as a
   low-battery warning, not a precision instrument.
 
+## Similar systems
+
+FlareBuddy is not the first landing height caller — the idea descends
+from the airliner radio altimeter, and commercial GA versions exist:
+
+- **MicroKit Landing Height System** — laser-based, announces
+  200 ft down to 1 ft, NORSEE-approved for any GA airplane as a minor
+  alteration. $1,065 ($1,165 for the 200 series with gear warning).
+- **Holy Micro! SkyVoice Alert 500** — LiDAR, takeoff and landing
+  callouts from 500 ft, NORSEE-approved. $1,450.
+- **EngineBridge** also sells an installed landing height system.
+
+All of them are *installed* equipment — wired into aircraft power and
+the intercom — and their lasers reach 200 ft. FlareBuddy is the
+opposite trade: nothing installed, nothing wired, its own battery and
+Bluetooth audio, roughly $100 in parts, at the cost of a ~40 ft sensor
+ceiling. If your airplane is certified and you want callouts from
+200 ft, buy one of theirs. If you want to strap something on for the
+weekend, build one of these.
+
 ## Repository layout
 
 - `firmware/height_caller_v21.ino` — the sketch (Arduino / ESP32 core
