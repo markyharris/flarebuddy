@@ -42,11 +42,15 @@ with a deliberate pause between the 5-foot steps.
   *wheel* height, not sensor height), sensor select, display flip for
   upside-down mounting, ladder select. Everything persists across
   power cycles.
-- **Battery gauge** on screen, colour-coded — and it knows when it's on
-  USB power and says so instead of pegging at a misleading 100%.
-- **Any Bluetooth A2DP target** — earbuds (Galaxy Buds Pro proven), or a
-  small Bluetooth receiver plugged into the audio panel's aux input so
-  callouts come through the intercom.
+- **Battery gauge** on screen — it shows the measured voltage,
+  colour-banded (green / yellow / red), not a made-up percentage. On
+  USB power it says USB POWER instead, and left untouched on USB for
+  5 minutes the screen blanks to a single CHARGING until you pick it
+  up again.
+- **Any Bluetooth A2DP target** — earbuds or a headset (Galaxy Buds
+  Pro and Bose A20 proven), or a small Bluetooth receiver plugged
+  into the audio panel's aux input so callouts come through the
+  intercom (Scosche BTAXS3 proven).
 
 ## Hardware in one paragraph
 
@@ -62,8 +66,8 @@ install notes are in **[HOWTO.md](HOWTO.md)**.
 
 ## Status
 
-Bench-complete and bench-verified at firmware **v21** (the sketch's
-header comment carries the full version history, v1–v21; the bench
+Bench-complete and bench-verified at firmware **v28** (the sketch's
+header comment carries the full version history, v1–v28; the bench
 record is in [BENCH_LOG.md](BENCH_LOG.md)). The prototype is built and
 printed; first flight test is pending the strut mount's arrival.
 
@@ -73,7 +77,8 @@ Known honest limits:
   on the bench *through its protective lens film*; the Full Range
   ladder arms at 50 ft, but returns past the rated range are gravy,
   not a promise. The first callout you actually hear may be 40 — or 35.
-- The battery percentage is a voltage-based gauge: honest as a
+- The battery gauge reads the measured voltage (colour bands: green
+  ≥3.75 V, yellow 3.55–3.74 V, red below 3.55 V): honest as a
   low-battery warning, not a precision instrument.
 
 ## Similar systems
@@ -99,8 +104,10 @@ weekend, build one of these.
 
 ## Repository layout
 
-- `firmware/height_caller_v21.ino` — the sketch (Arduino / ESP32 core
-  3.3.x, **Huge APP** partition scheme — see the HOWTO).
+- `firmware/height_caller_v28.ino` — the current sketch (Arduino /
+  ESP32 core 3.3.x, **Huge APP** partition scheme — see the HOWTO).
+  `height_caller_v21.ino` remains alongside it as the version the
+  repo first shipped.
 - `firmware/voice_clips.h` — the spoken callouts as PCM arrays.
   Generated, do not edit by hand.
 - `voice/make_clips_v20.py` — regenerates `voice_clips.h` from the

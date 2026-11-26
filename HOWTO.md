@@ -15,7 +15,7 @@ isn't (an uncertified advisory aid — fly the airplane).
 | Slide switch, SPST | In the battery + lead. |
 | 3D-printed case | ABS for cockpit heat. The reference build integrates a GoPro-pattern fork into the case. Board 51.4 × 25.2 mm; display glass 29.5 × 17.6 mm, offset 7.6 mm from the board's bottom (LILYGO) end. |
 | Strut mount | FlightFlix / Rock Steady pattern cushioned strap mount with a ball or GoPro hinge for tilt. Plus a safety lanyard — always. |
-| Bluetooth audio target | Galaxy Buds Pro (proven) or any A2DP earbuds/headset; or a direct-plug Bluetooth receiver (e.g. Scosche BTAXS3) in the audio panel's aux input. |
+| Bluetooth audio target | Galaxy Buds Pro and Bose A20 headset (both proven), or any A2DP earbuds/headset; or a direct-plug Bluetooth receiver (Scosche BTAXS3, proven) in the audio panel's aux input. |
 | Optional: [AJ-SR04M ultrasonic](https://probots.co.in/aj-sr04m-waterproof-ultrasonic-distance-sensor-module.html) + its blue driver board | Bench/backup sensor. The firmware's SENSOR menu supports it on the same pins. Its ladder tops out around 19 ft, so it's a fallback, not the flight sensor. (A commodity part — the same kit is on Amazon, eBay and AliExpress for roughly $10–15.) |
 
 **What it costs** (November 2026 prices, before shipping and tax):
@@ -97,7 +97,7 @@ You need the Arduino IDE 2.x on a computer.
      Library Manager search doesn't find it.
    - **Adafruit GFX Library** and **Adafruit ST7735 and ST7789
      Library** — from Library Manager.
-5. Put `height_caller_v21.ino` and `voice_clips.h` in the **same
+5. Put `height_caller_v28.ino` and `voice_clips.h` in the **same
    sketch folder** (the folder must be named after the sketch for the
    IDE; one standing folder reused for every version keeps the IDE's
    remembered board/port/partition settings).
@@ -121,19 +121,23 @@ power cycles and firmware updates.
 ![The FlareBuddy settings screens](menu_screens.png)
 
 *The SETTINGS menu and three of its screens, rendered from the
-firmware — the layout and wording are the device's own. The status
+firmware — the layout is the device's own; a few BT-screen labels
+were shortened in v26, when the menu text grew a size. The status
 block at the bottom of the menu always shows the current settings at
 a glance. (The DISPLAY screen follows the SENSOR screen's pattern:
 UPRIGHT / FLIPPED.)*
 
 - **BT DEVICE** — pair your audio target. Choosing it scans for
   nearby Bluetooth audio devices and lists what it finds; VOL− steps
-  the list, VOL+ picks. Put earbuds in pairing mode first (Galaxy
+  the list, VOL+ picks. Put the target in pairing mode first (Galaxy
   Buds Pro: buds in the case, close it, reopen it — the touchpad-hold
-  method alone didn't work). The chosen device's name is saved, and
-  after the first successful connect the board remembers it and
-  reconnects on its own at power-up. Only one device is remembered —
-  picking a new one replaces it.
+  method alone didn't work). The pick saves the device's name *and*
+  its Bluetooth address, the board restarts, and from then on it
+  connects to that specific device at power-up. Only one device is
+  remembered — picking a new one replaces it, and each pick is a
+  fresh pairing, so the target needs to be in pairing mode every
+  time you switch. If you pair the target with a phone in between,
+  just pick it here again.
 - **WHEEL OFFSET** — the sensor's height above the ground with the
   airplane parked on its gear. The picker shows the value big: VOL−
   steps 0.0–4.0 ft in 0.5 ft steps, VOL+ sets it. The offset is
@@ -193,12 +197,15 @@ bench and backup sensor. Fly the LiDAR.
 3. Walk the unit (or a target board) down from past 40 ft: expect
    **40, 35, 30, 25, 20, 19, 18…** each called as you descend through
    its number. Back up and it counts up again.
-4. Two behaviours that are the design working, not faults:
+4. Three behaviours that are the design working, not faults:
    - After a fast move to a new height there's a **~¾ second pause**
      before it's announced — the plausibility gate confirming the step
      was real (see the README).
-   - On USB power the bottom line reads **USB POWER** instead of a
-     battery percentage.
+   - On USB power the bottom line reads **USB POWER** instead of the
+     battery voltage.
+   - Left untouched on USB for 5 minutes, the screen blanks to a
+     single centred **CHARGING** — the idle charging display. Any
+     button press brings the normal screen straight back.
 5. Range expectations: rock-solid readings to ~37 ft were measured on
    the prototype (through the lens film). The sensor is rated to
    39.4 ft; treat anything beyond as best-effort.
@@ -254,7 +261,9 @@ bench and backup sensor. Fly the LiDAR.
 | No callouts above ~19 ft on the ultrasonic | Expected — that's its ceiling. The TFmini is the flight sensor. |
 | Wild height announced once, then quiet | A bad reflection got through for a moment; the plausibility gate and watchdog handle it. Repeated wild readings = check for a dirty lens or something in the sensor's view. |
 | Screen upside down | SETTINGS → DISPLAY → FLIPPED. |
-| Battery shows 100% forever on USB | You're reading an old firmware — v21 shows USB POWER. On battery the percentage is a voltage estimate, not a fuel gauge. |
+| Bottom line reads USB POWER and never shows a voltage | It's on USB power — by design. On battery the line shows the measured voltage, colour-banded (green ≥3.75 V, yellow to 3.55 V, red below): a warning gauge, not a fuel gauge. |
+| Screen shows only CHARGING | It's been sitting untouched on USB for 5 minutes — the idle charging display. Press any button. |
+| Picked a device in BT DEVICE, but it connects to a different one (or the picked one sits flashing, never contacted) | Firmware older than v28: the Bluetooth library paged the *last successfully connected* device's address whatever you picked — update to v28, which saves the picked device's address. On v28, also make sure the target is in pairing mode when you pick it, and re-pick it here if it was paired with a phone in between. |
 | Sketch too big / upload fails at link | Partition scheme isn't Huge APP, or the ESP32 core is 4.0.0 on a spaced Windows path. |
 
 ## 9. Voice clips
